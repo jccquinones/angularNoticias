@@ -31,6 +31,10 @@ import { ErrorComponent } from './component/error/error.component';
 // Rutas
 import {routing, AppRoutingProviders} from './app.routing';
 
+// Servicios
+import {GlobalService} from "./service/global.service";
+import {ArticlesService} from "./service/articles.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +61,7 @@ import {routing, AppRoutingProviders} from './app.routing';
     MatToolbarModule,
     routing
   ],
-  providers: [AppRoutingProviders],
+  providers: [AppRoutingProviders, GlobalService, ArticlesService],
   bootstrap: [AppComponent]
 })
 
