@@ -27,19 +27,21 @@ import {
 // Components
 import { HomeComponent } from './component/home/home.component';
 import { ErrorComponent } from './component/error/error.component';
+import { ArticlesListComponent } from './component/articles-list/articles-list.component';
 
 // Rutas
 import {routing, AppRoutingProviders} from './app.routing';
 
 // Servicios
-import {GlobalService} from "./service/global.service";
-import {ArticlesService} from "./service/articles.service";
+import {GlobalService} from './service/global.service';
+import {ArticlesService} from './service/articles.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    ArticlesListComponent
   ],
   imports: [
     BrowserAnimationsModule,
