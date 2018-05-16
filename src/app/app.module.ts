@@ -24,11 +24,18 @@ import {
   MatIconModule
 } from '@angular/material';
 
+// Components
+import { HomeComponent } from './component/home/home.component';
+import { ErrorComponent } from './component/error/error.component';
 
+// Rutas
+import {routing, AppRoutingProviders} from './app.routing';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -47,9 +54,10 @@ import {
     MatPaginatorModule,
     MatProgressBarModule,
     MatTabsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    routing
   ],
-  providers: [],
+  providers: [AppRoutingProviders],
   bootstrap: [AppComponent]
 })
 
