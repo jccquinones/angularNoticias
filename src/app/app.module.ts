@@ -35,13 +35,15 @@ import {routing, AppRoutingProviders} from './app.routing';
 // Servicios
 import {GlobalService} from './service/global.service';
 import {ArticlesService} from './service/articles.service';
+import { ArticleDetailComponent } from './component/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    ArticlesListComponent
+    ArticlesListComponent,
+    ArticleDetailComponent
   ],
   imports: [
     BrowserAnimationsModule,
