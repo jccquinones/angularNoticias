@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params} from "@angular/router";
-import { ArticlesService} from "../../service/articles.service";
-import { Article} from "../../model/article";
+import { Router, ActivatedRoute, Params} from '@angular/router';
+import { ArticlesService} from '../../service/articles.service';
+import { Article} from '../../model/article';
 
 @Component({
   selector: 'app-articles-list',
@@ -9,14 +9,6 @@ import { Article} from "../../model/article";
   styleUrls: ['./articles-list.component.css'],
   providers: [ArticlesService]
 })
-export class ArticlesListComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
 
 export class ArticlesListComponent implements OnInit {
 
@@ -33,7 +25,7 @@ export class ArticlesListComponent implements OnInit {
     this.articleService.getArticles().subscribe(
 
       result => {
-        // se retornan los articulos de api-news
+        // se retornan los articulos desde api-news
         this.articles = result.articles;
         console.log(result.articles);
       }
