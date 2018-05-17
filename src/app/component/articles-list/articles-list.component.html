@@ -11,6 +11,7 @@
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{article.title}}</mat-card-title>
         <button mat-raised-button color="warn" [routerLink]="['/article-detail', i]">VER MÁS</button>
+        <button mat-raised-button color="warn" (click)="addFavorite(article)">Agregar A favorito</button>
         <mat-card-subtitle>ID: {{article.description}}</mat-card-subtitle>
         {{article.descripction}}
       </mat-card-content>

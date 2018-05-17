@@ -1,3 +1,19 @@
+<div *ngIf="!favorites">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+<mat-grid-list cols="2" rowHeight="0.5:0.5" *ngIf="favorites">
+  <mat-grid-tile *ngFor="let article of favorites; let i = index">
+    <mat-card *ngIf="i<24" class="example-card">
+      <mat-card-title>{{article.title}}</mat-card-title>
+      <mat-card-content>
+        <img width="400" height="250" src={{article.urlToImage}} alt={{article.title}}>
+        <button mat-raised-button color="warn" [routerLink]="['/favorite-detail', i]">VER MÁS</button>
+        <button mat-raised-button color="warn" (click)="deleteFavorite(article)">Borrar de favoritos</button>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
 <p>
-  favorites-list works!
+  <button mat-raised-button color="warn" [routerLink]="['/']"> VOLVER</button>
 </p>
+<h1>GG</h1>

@@ -41,8 +41,4 @@ export class ArticleDetailComponent implements OnInit {
 
   }
 
-  getArticle(id) {
-
-  }
-
 }
