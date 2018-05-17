@@ -10,17 +10,33 @@ import { GlobalService} from "./global.service";
 export class ArticlesService {
 
   public url: string;
+  public favorites: Article[];
 
   constructor(
     public _http: Http,
     public _url: GlobalService
   ) {
+    this.favorites = [];
     this.url = _url.getUrl();
   }
 
-  getArticles(){
+  getArticles() {
 
     return this._http.get(this.url).map(res => res.json());
   }
 
+  getArticle(id) {
+    console.log(id);
+    return this._http.get(this.url).map(res => res.json());
+  }
+
+  getFavorites() {
+    if (localStorage.getItem('favorites') == null) {
+      this.favorites = [];
+    } else {
+      this.favorites = JSON.parse(localStorage.getItem('favoritos'));
+    }
+
+    return this.favorites;
+  }
 }
