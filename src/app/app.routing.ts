@@ -9,7 +9,7 @@ import {ArticlesListComponent} from './component/articles-list/articles-list.com
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'listado', component: ArticlesListComponent}
+  { path: 'listado', component: ArticlesListComponent},
   { path: '**', component: ErrorComponent}
 ];
 
