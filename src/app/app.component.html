@@ -2,16 +2,15 @@
   <mat-toolbar color="primary">
     <span><mat-icon>domain</mat-icon></span>
 
-    <span>Taller en Clases - {{title}}</span>
+    <span>{{title}}</span>
 
     <button mat-raised-button color="warn" [routerLink]="['/']"> Inicio </button>
-    <button mat-raised-button [routerLink]="['/']">Crear </button>
-    <button mat-raised-button color="primary">Borrar </button>
-    <button mat-raised-button color="accent">Editar </button>
+    <button mat-raised-button [routerLink]="['/listado']"> Listado </button>
 
   </mat-toolbar>
 
   <mat-card>
+    <h1> Bienvenido!</h1>
     <router-outlet></router-outlet>
   </mat-card>
 
