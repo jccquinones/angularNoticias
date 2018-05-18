@@ -36,6 +36,8 @@ import {routing, AppRoutingProviders} from './app.routing';
 import {GlobalService} from './service/global.service';
 import {ArticlesService} from './service/articles.service';
 import { ArticleDetailComponent } from './component/article-detail/article-detail.component';
+import { FavoritesListComponent } from './component/favorites-list/favorites-list.component';
+import { FavoriteDetailComponent } from './component/favorite-detail/favorite-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ArticleDetailComponent } from './component/article-detail/article-detai
     HomeComponent,
     ErrorComponent,
     ArticlesListComponent,
-    ArticleDetailComponent
+    ArticleDetailComponent,
+    FavoritesListComponent,
+    FavoriteDetailComponent
   ],
   imports: [
     BrowserAnimationsModule,

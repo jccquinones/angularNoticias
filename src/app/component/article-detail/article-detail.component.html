@@ -1,3 +1,23 @@
-<p>
-  article-detail works!
-</p>
+<h1 *ngIf="article">{{article.title}}</h1>
+<mat-card class="example-card">
+  <mat-card-header>
+  </mat-card-header>
+  <img mat-card-image src={{article.urlToImage}} alt={{article.title}}>
+  <mat-card-content>
+    <p>
+      {{article.description}}
+    </p>
+    <div>
+      {{article.author}}
+    </div>
+    <div>
+      {{article.publishedAt}}
+    </div>
+    <div>
+      {{article.source[0]}}
+    </div>
+  </mat-card-content>
+</mat-card>
+<br>
+<button mat-raised-button color="warn"><mat-icon>star</mat-icon> Agregar a favoritos</button>
+<button mat-raised-button color="warn" [routerLink]="['/listado']">Volver</button>

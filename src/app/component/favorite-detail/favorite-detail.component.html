@@ -1,0 +1,22 @@
+<h1 *ngIf="favorites">{{favorite.title}}</h1>
+<mat-card class="example-card">
+  <mat-card-header>
+  </mat-card-header>
+  <img mat-card-image src={{favorite.urlToImage}} alt={{favorite.title}}>
+  <mat-card-content>
+    <p>
+      {{favorite.description}}
+    </p>
+    <div>
+      {{favorite.author}}
+    </div>
+    <div>
+      {{favorite.publishedAt}}
+    </div>
+    <div>
+      {{favorite.source[0]}}
+    </div>
+  </mat-card-content>
+</mat-card>
+<br>
+<button mat-raised-button color="warn" [routerLink]="['/listado']">Volver</button>
