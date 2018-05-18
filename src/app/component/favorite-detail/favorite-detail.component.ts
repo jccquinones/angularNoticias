@@ -40,9 +40,9 @@ export class FavoriteDetailComponent implements OnInit {
           console.log(result.articles);
           console.log(this.favorites[id]);
         }
-      )
+      );
 
-    }
+    });
   }
 
 }

@@ -35,10 +35,8 @@ export class ArticleDetailComponent implements OnInit {
           this.article = result.articles[id];
           console.log(result.articles);
         }
-      )
-
-    }
-
+      );
+    });
   }
 
 }
