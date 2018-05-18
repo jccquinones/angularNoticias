@@ -11,8 +11,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 })
 export class ArticleDetailComponent implements OnInit {
 
-  public favorite: Article;
-  public let; favorites = [];
+  public article: Article;
   constructor(
 
   private articlesService: ArticlesService,
@@ -24,8 +23,7 @@ export class ArticleDetailComponent implements OnInit {
   ngOnInit() {
 
     console.log('producto-detail.Component.ts cargado...');
-    this.favorites = this.articlesService.getFavorites();
-    console.log(this.favorites);
+
     this._route.params.forEach((params: Params) => {
 
       const id = params['id'];
@@ -34,8 +32,8 @@ export class ArticleDetailComponent implements OnInit {
 
         result => {
           // Se retorna el articulo desde api-news
-          this.favorite = this.favorites[id];
-          console.log(this.favorites[id]);
+          this.article = result.articles[id];
+          console.log(result.articles);
         }
       );
 
@@ -44,4 +42,3 @@ export class ArticleDetailComponent implements OnInit {
   }
 
 }
-
