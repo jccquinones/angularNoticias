@@ -1,19 +1,35 @@
+<h1>Favoritos</h1>
+<br/>
 <div *ngIf="!favorites">
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
-<mat-grid-list cols="2" rowHeight="0.5:0.5" *ngIf="favorites">
-  <mat-grid-tile *ngFor="let article of favorites; let i = index">
-    <mat-card *ngIf="i<24" class="example-card">
-      <mat-card-title>{{article.title}}</mat-card-title>
-      <mat-card-content>
-        <img width="400" height="250" src={{article.urlToImage}} alt={{article.title}}>
-        <button mat-raised-button color="warn" [routerLink]="['/favorite-detail', i]">VER MÁS</button>
-        <button mat-raised-button color="warn" (click)="deleteFavorite(article)">Borrar de favoritos</button>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<div flex-gt-md="50" flex>
+  <div *ngFor="let favorite of favorites; let i = index">
+    <!--Card Narrower-->
+    <div class="card card-cascade narrower">
+
+      <!--Card image-->
+      <div class="view overlay">
+        <img src={{favorite.urlToImage}} class="img-fluid" alt="narrower">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--/.Card image-->
+
+      <!--Card content-->
+      <div class="card-body">
+        <h3 class="text-dark">{{favorite.title}}</h3>
+        <button mat-raised-button color="warn" [routerLink]="['/favorite-detail', i]"><mat-icon>find_in_page</mat-icon>VER MÁS</button>
+        <button mat-raised-button color="warn" (click)="deleteFavorite(favorite)">ELIMINAR FAVORITO</button>
+      </div>
+      <!--/.Card content-->
+
+    </div>
+    <!--/.Card Narrower-->
+    <br/>
+  </div>
+</div>
 <p>
-  <button mat-raised-button color="warn" [routerLink]="['/']"> VOLVER</button>
+  <button mat-raised-button color="accent" [routerLink]="['/']"> VOLVER</button>
 </p>
-<h1>GG</h1>

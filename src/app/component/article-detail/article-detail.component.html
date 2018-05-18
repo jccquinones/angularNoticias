@@ -1,24 +1,42 @@
-<h1 *ngIf="article">{{article.title}}</h1>
-<mat-card class="example-card">
-  <mat-card-header>
-  </mat-card-header>
-  <img mat-card-image src={{article.urlToImage}} alt={{article.title}}>
-  <mat-card-content>
-    <p>
-      {{article.description}}
-    </p>
-    <div>
-      {{article.author}}
-    </div>
-    <div>
-      {{article.publishedAt}}
-    </div>
+<h1>Noticia Seleccionada</h1>
+<br/>
+<div flex-gt-md="50" flex>
+  <!--Card Narrower-->
+  <div class="card card-cascade narrower">
 
-    <div>
-      {{article.source[0]}}
+    <!--Card image-->
+    <div class="view overlay">
+      <img src={{article.urlToImage}} class="img-fluid" alt="narrower">
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
     </div>
-  </mat-card-content>
-</mat-card>
-<br>
-<button mat-raised-button color="accent"><mat-icon>star</mat-icon> Agregar a favoritos</button>
-<button mat-raised-button color="accent" [routerLink]="['/listado']">Volver</button>
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-body text-dark">
+      <h3 class="text-dark">{{article.title}}</h3>
+      <p>
+        {{article.description}}
+      </p>
+      <div>
+        {{article.author}}
+      </div>
+      <div>
+        {{article.publishedAt}}
+      </div>
+      <br/>
+      <div>
+        <a href="{{article.url}}">VER NOTICIA COMPLETA</a>
+      </div>
+      <div>
+        {{article.source[0]}}
+      </div>
+    </div>
+    <!--/.Card content-->
+
+  </div>
+  <!--/.Card Narrower-->
+</div>
+<br/>
+<button mat-raised-button color="warn" [routerLink]="['/listado']">VOLVER</button>

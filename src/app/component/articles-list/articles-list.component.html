@@ -1,23 +1,35 @@
+<h1>Noticias</h1>
+<br/>
 <div *ngIf="!articles">
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>
-<mat-grid-list cols="1" rowHeight="0.5:0.5" *ngIf="articles">
-  <mat-grid-tile *ngFor="let article of articles; let i = index">
-    <mat-card>
-      <mat-card-header>
-        <img mat-card-mat-image src={{article.urlToImage}} alt="Photo of a Shiba Inu">
-      </mat-card-header>
-      <mat-card-content>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{article.title}}</mat-card-title>
-        <button mat-raised-button color="warn" [routerLink]="['/article-detail', i]">VER MÁS</button>
-        <button mat-raised-button color="warn" (click)="addFavorite(article)">Agregar A favorito</button>
-        <mat-card-subtitle>ID: {{article.description}}</mat-card-subtitle>
-        {{article.descripction}}
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<div flex-gt-md="50" flex>
+  <div *ngFor="let article of articles; let i = index">
+    <!--Card Narrower-->
+    <div class="card card-cascade narrower">
+
+      <!--Card image-->
+      <div class="view overlay">
+        <img src={{article.urlToImage}} class="img-fluid" alt="narrower">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--/.Card image-->
+
+      <!--Card content-->
+      <div class="card-body">
+        <h3 class="text-dark">{{article.title}}</h3>
+        <button mat-raised-button color="warn" [routerLink]="['/article-detail', i]"><mat-icon>find_in_page</mat-icon>VER MÁS</button>
+        <button mat-raised-button color="warn" (click)="addFavorite(article)"><mat-icon>star</mat-icon>FAVORITO</button>
+      </div>
+      <!--/.Card content-->
+
+    </div>
+    <!--/.Card Narrower-->
+    <br/>
+  </div>
+</div>
 <p>
-  <button mat-raised-button color="warn" [routerLink]="['/']"> Volver</button>
+  <button mat-raised-button color="accent" [routerLink]="['/']"> VOLVER</button>
 </p>

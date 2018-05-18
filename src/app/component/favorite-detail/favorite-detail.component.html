@@ -1,4 +1,4 @@
-<h1 *ngIf="favorites">{{favorite.title}}</h1>
+<!--<h1 *ngIf="favorites">{{favorite.title}}</h1>
 <mat-card class="example-card">
   <mat-card-header>
   </mat-card-header>
@@ -19,4 +19,46 @@
   </mat-card-content>
 </mat-card>
 <br>
-<button mat-raised-button color="warn" [routerLink]="['/listado']">Volver</button>
+<button mat-raised-button color="warn" [routerLink]="['/listado']">Volver</button>-->
+<h1>Noticia Favorita Seleccionada</h1>
+<br/>
+<div flex-gt-md="50" flex>
+  <!--Card Narrower-->
+  <div class="card card-cascade narrower">
+
+    <!--Card image-->
+    <div class="view overlay">
+      <img src={{favorite.urlToImage}} class="img-fluid" alt="narrower">
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+    <!--/.Card image-->
+
+    <!--Card content-->
+    <div class="card-body text-dark">
+      <h3 class="text-dark">{{favorite.title}}</h3>
+      <p>
+        {{favorite.description}}
+      </p>
+      <div>
+        {{favorite.author}}
+      </div>
+      <div>
+        {{favorite.publishedAt}}
+      </div>
+      <br/>
+      <div>
+        <a href="{{favorite.url}}">VER NOTICIA COMPLETA</a>
+      </div>
+      <div>
+        {{favorite.source[0]}}
+      </div>
+    </div>
+    <!--/.Card content-->
+
+  </div>
+  <!--/.Card Narrower-->
+</div>
+<br/>
+<button mat-raised-button color="warn" [routerLink]="['/favorites']">VOLVER</button>
