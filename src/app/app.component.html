@@ -1,18 +1,66 @@
 <div>
-  <mat-toolbar color="primary">
-    <span><mat-icon>domain</mat-icon></span>
+  <!--Main Navigation-->
+  <header>
 
-    <span>{{title}}</span>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light mdb-color darken-2 scrolling-navbar">
+      <div class="container">
 
-    <button mat-raised-button color="warn" [routerLink]="['/']"> Inicio </button>
-    <button mat-raised-button [routerLink]="['/listado']"> Listado </button>
-    <button mat-raised-button [routerLink]="['/favorites']"> Favoritos </button>
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">
+          <strong class="white-text">Noticias TWA</strong>
+        </a>
 
-  </mat-toolbar>
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <mat-card>
-    <h1> Bienvenido!</h1>
-    <router-outlet></router-outlet>
-  </mat-card>
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a [routerLink]="['/listado']" class="nav-link waves-effect white-text">Inicio
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a [routerLink]="['/favorites']" class="nav-link waves-effect white-text">Favoritos
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+  </header>
+  <!--Main Navigation-->
+  <main class="mt-5 pt-5">
+    <mat-card>
+      <router-outlet></router-outlet>
+    </mat-card>
+  </main>
+  <!--Main Navigation-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+    <hr class="my-4">
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2018 Copyright:
+      <a> John Quiñones - José Díaz </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
 </div>
