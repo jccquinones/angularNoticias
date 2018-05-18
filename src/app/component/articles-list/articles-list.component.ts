@@ -33,4 +33,8 @@ export class ArticlesListComponent implements OnInit {
 
   }
 
+  addFavorite( article: Article) {
+    this.articleService.saveFavorite(article);
+  }
+
 }

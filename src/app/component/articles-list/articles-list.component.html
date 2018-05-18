@@ -8,9 +8,11 @@
       </mat-card-header>
       <mat-card-content>
         <mat-card-title>{{article.title}}</mat-card-title>
+
         <img width="400" height="250" src={{article.urlToImage}} alt={{article.title}}>
         <br>
-        <button mat-raised-button color="warn" [routerLink]="['/detalle-article', i]">Ver Más</button>
+        <button mat-raised-button color="warn" [routerLink]="['/article-detail', i]">VER MÁS</button>
+        <button mat-raised-button color="warn" (click)="addFavorite(article)">Agregar A favorito</button>
       </mat-card-content>
     </mat-card>
   </mat-grid-tile>
