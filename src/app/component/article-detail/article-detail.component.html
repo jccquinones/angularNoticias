@@ -14,10 +14,14 @@
       {{article.publishedAt}}
     </div>
     <div>
+      <button mat-raised-button color="warn" href="{{article.url}}">VER MÁS</button>
+    </div>
+
+    <div>
       {{article.source[0]}}
     </div>
   </mat-card-content>
 </mat-card>
 <br>
-<button mat-raised-button color="warn"><mat-icon>star</mat-icon> Agregar a favoritos</button>
-<button mat-raised-button color="warn" [routerLink]="['/listado']">Volver</button>
+<button mat-raised-button color="accent"><mat-icon>star</mat-icon> Agregar a favoritos</button>
+<button mat-raised-button color="accent" [routerLink]="['/listado']">Volver</button>
